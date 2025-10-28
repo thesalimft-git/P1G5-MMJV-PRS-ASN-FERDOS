@@ -6,6 +6,8 @@ users = [
     {'name': 'ali5', 'age': 25, 'city': 'rasht'},
 ]
 
+def func1():
+    print('hello')
 # map, filter, zip
 
 # def get_name_by_age(a):
