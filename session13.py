@@ -5,6 +5,7 @@ users = [
     {'name' : 'ali4', 'age': 24, 'city': 'Tehran'},
     {'name' : 'ali5', 'age': 25, 'city': 'Rasht'},
 ]
+
 # map, filter, zip
 # iterable : list,dict,tuple,string
 # map(1, 2)
@@ -64,7 +65,7 @@ def show_users(li):
 
 # add_birthday()
 
-result = map(lambda item : item.get('name'), users)
-print(list(result))
+# result = map(lambda item : item.get('name'), users)
+# print(list(result))
 
 # y = list(result).copy()
