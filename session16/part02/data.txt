@@ -1,0 +1,15 @@
+1- pc: r, h: p
+4- pc: s, h: p
+6- pc: p, h: r
+7- pc: p, h: r
+9- pc: p, h: s
+10- pc: r, h: s
+11- pc: r, h: s
+13- pc: r, h: s
+15- pc: r, h: s
+17- pc: p, h: r
+18- pc: p, h: r
+19- pc: p, h: r
+
+pc: 10
+h: 20
