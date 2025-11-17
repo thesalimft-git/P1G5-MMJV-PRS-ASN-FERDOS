@@ -27,18 +27,18 @@ cur = con.cursor()
 # cur.execute(command)
 
 
-# command = "CREATE TABLE user(id, first_name, last_name, username, password)"
+# command = "CREATE TABLE IF NOT EXISTS user(id, first_name, last_name, username, password)"
 # cur.execute(command)
 
 # command = "CREATE TABLE orders(id, user_id, product_id)"
 # cur.execute(command)
 
 
-command = """
-    INSERT INTO user VALUES
-        (1, 'ali', 'akbari', 'ali@gmail.com', '1234'),
-        (2, 'reza', 'akbari', 'reza@gmail.com', '9876')
-"""
+# command = """
+#     INSERT INTO user VALUES
+#         (1, 'ali', 'akbari', 'ali@gmail.com', '1234'),
+#         (2, 'reza', 'akbari', 'reza@gmail.com', '9876')
+# """
 
-cur.execute(command)
-con.commit()
+# cur.execute(command)
+# con.commit()
