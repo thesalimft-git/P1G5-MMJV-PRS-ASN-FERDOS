@@ -58,4 +58,3 @@ con.commit()
 
 # cur.execute(command)
 # con.commit()
-

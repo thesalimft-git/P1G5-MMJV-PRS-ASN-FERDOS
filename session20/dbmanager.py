@@ -4,7 +4,7 @@ class DbManager:
     def __init__(self, db_name="session20/database.db"):
         self.db_name = db_name
         self.conn = sqlite3.connect(self.db_name)
-        self.conn.row_factory = sqlite3.Row     # return rows as dict-like objects
+        self.conn.row_factory = sqlite3.Row     ## return rows as dict-like objects
         self.cur = self.conn.cursor()
 
     # -----------------------
