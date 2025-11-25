@@ -1,9 +1,4 @@
-
-
-
-
 from datetime import datetime as dt
-
 
 class BankAccountManagement:
     def __init__(self, accounts:dict):
