@@ -2,6 +2,7 @@
 
 
 
+from datetime import datetime as dt
 
 
 class BankAccountManagement:
@@ -12,13 +13,16 @@ class BankAccountManagement:
         id = len(self.accounts) + 1
         self.accounts.update({
             id: {
-                    'owner': name, 
+                    'name': name, 
                     'balance': first_amount, 
-                    'transactions': [
-                        {'time': '202 ???? ', type: 'deposit', 'amount': first_amount},
+                    'history': [
+                        {'time': dt.now(), type: 'deposit', 'amount': first_amount},
                     ],
                     'status': 'active'     
                 }
         })
+        return True
     
+    def record_tranfer(self, from_who, to_whom, amount):
+        self.accounts
     
