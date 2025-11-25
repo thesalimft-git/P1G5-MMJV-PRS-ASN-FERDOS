@@ -1,4 +1,4 @@
-acounts = {
+accounts = {
     1: {
         'name': 'ali', 
         'balance': 100.0, 

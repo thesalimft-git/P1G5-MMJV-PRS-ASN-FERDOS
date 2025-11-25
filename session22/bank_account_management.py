@@ -4,6 +4,9 @@ class BankAccountManagement:
     def __init__(self, accounts:dict):
         self.accounts = accounts
         
+    def show_info(self):
+        print(self.accounts)
+            
     def add_user(self, name:str, first_amount:float):
         id = len(self.accounts) + 1
         self.accounts.update({
