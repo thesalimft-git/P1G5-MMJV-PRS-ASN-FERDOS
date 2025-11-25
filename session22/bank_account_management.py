@@ -6,8 +6,19 @@ class BankAccountManagement:
         
     def show_info(self):
         print(self.accounts)
-            
+        for id in self.accounts:
+            print(f"{id}- {self.accounts[id]['name']} ({self.accounts[id]['balance']})")
+ 
+          
     def add_user(self, name:str, first_amount:float):
+        if not name:
+            return {'status': 'error', 'msg': 'name is empty'}
+            
+        try:
+            first_amount = float(first_amount)
+        except:
+            return {'status': 'error', 'msg': 'amount is not float'}
+            
         id = len(self.accounts) + 1
         self.accounts.update({
             id: {
@@ -19,7 +30,7 @@ class BankAccountManagement:
                     'status': 'active'     
                 }
         })
-        return True
+        return {'status': 'ok'}
     
     def record_tranfer(self, from_who, to_whom, amount):
         # check if id exist:
