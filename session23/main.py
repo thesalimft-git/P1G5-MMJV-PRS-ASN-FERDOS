@@ -8,7 +8,7 @@ def show_menu():
     print('1- Show All')
     print('2- Add user')
     print('3- Transfer')
-    print('0- Exit')
+    print('5- Exit')
 
 def add_user():
     name = input('insert name: ')
@@ -24,13 +24,17 @@ def main():
     while True:
         show_menu()
         command = input('select from menu: ')
-        match command:
-            case '1':
-                bam.show_info()
-            case '2':
-                add_user()
-            case '0':
-                break
+        if command == '1':
+            bam.show_info()
+        elif command == '2':
+            add_user()
+        elif command == '5':
+            break
+        else:
+            print('wring choice, try again')
+            
+
+                
                 
         
         
