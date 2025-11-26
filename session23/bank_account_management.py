@@ -8,8 +8,7 @@ class BankAccountManagement:
         print(self.accounts)
         for id in self.accounts:
             print(f"{id}- {self.accounts[id]['name']} ({self.accounts[id]['balance']})")
- 
-          
+   
     def add_user(self, name:str, first_amount:float):
         if not name:
             return {'status': 'error', 'msg': 'name is empty'}
@@ -21,11 +20,11 @@ class BankAccountManagement:
             
         id = len(self.accounts) + 1
         self.accounts.update({
-            id: {
+            str(id): {
                     'name': name, 
                     'balance': first_amount, 
                     'history': [
-                        {'time': dt.now(), type: 'deposit', 'amount': first_amount},
+                        {'time': dt.now().strftime('%Y-%M-%D %H:%M'), type: 'deposit', 'amount': first_amount},
                     ],
                     'status': 'active'     
                 }
@@ -54,15 +53,20 @@ class BankAccountManagement:
             self.accounts[to_whom]['balance'] += amount
             
             self.accounts[from_who]['history'].append(
-                {'time': dt.now(), type: 'withdraw', 'amount': amount}
+                {'time': dt.now().strftime('%Y-%M-%D %H:%M'), type: 'withdraw', 'amount': amount}
             )
 
             self.accounts[to_whom]['history'].append(
-                {'time': dt.now(), type: 'deposite', 'amount': amount}
+                {'time': dt.now().strftime('%Y-%M-%D %H:%M'), type: 'deposite', 'amount': amount}
             )
             return {'status': 'ok'}
             
         except:
             return {'status': 'error', 'msg': 'some error happend'}
-            
+    
+    def deposit(self):
+        pass 
+       
+    def withdraw(self):
+        pass    
             

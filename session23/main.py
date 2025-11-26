@@ -1,6 +1,12 @@
-from data import accounts
+from data_manager import DataManager
 from bank_account_management import BankAccountManagement
 
+dm = DataManager()
+try: 
+    accounts = dm.get()
+except:
+    accounts = dict()
+    
 bam = BankAccountManagement(accounts)
 
 def show_menu():
@@ -8,7 +14,10 @@ def show_menu():
     print('1- Show All')
     print('2- Add user')
     print('3- Transfer')
-    print('5- Exit')
+    print('4- Deposite')
+    print('5- Withdraw')
+    print('6- Exit')
+  
 
 def add_user():
     name = input('insert name: ')
@@ -31,10 +40,16 @@ def transfer():
     else:
         print('transfer is done')
 
+def deposit():
+    pass
+
+def withdraw():
+    pass
 
 def main():
     while True:
         show_menu()
+        dm.set(accounts)
         command = input('select from menu: ')
         if command == '1':
             bam.show_info()
@@ -42,13 +57,17 @@ def main():
             add_user()
         elif command == '3':
             transfer()
+        elif command == '4':
+            deposit()
         elif command == '5':
+            withdraw()
+        elif command == '6':
             break
         else:
             print('wring choice, try again')
             
 
-                
+
                 
         
         
