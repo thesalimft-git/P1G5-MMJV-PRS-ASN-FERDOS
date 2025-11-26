@@ -32,7 +32,15 @@ class BankAccountManagement:
         })
         return {'status': 'ok'}
     
-    def record_tranfer(self, from_who, to_whom, amount):
+    def tranfer(self, from_who:str, to_whom:str, amount:str): 
+        # convert and check data type 
+        try:
+            from_who = int(from_who)
+            to_whom = int(to_whom)
+            amount = float(amount)
+        except:
+            return {'status': 'error', 'msg': 'inputs type are not valid'}          
+            
         # check if id exist:
         if from_who not in self.accounts:
             return {'status': 'error', 'msg': 'withdraw user does not exist'}

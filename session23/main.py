@@ -20,6 +20,18 @@ def add_user():
     if result['status'] == 'error':
         print(result['msg'])    
 
+def transfer():
+    from_who = input('from who: ')
+    to_whom = input('to whom: ')
+    amount = input('amont: ')
+    
+    result = bam.tranfer(from_who, to_whom, amount)
+    if result['status'] == 'error':
+        print(result['msg'])
+    else:
+        print('transfer is done')
+
+
 def main():
     while True:
         show_menu()
@@ -28,6 +40,8 @@ def main():
             bam.show_info()
         elif command == '2':
             add_user()
+        elif command == '3':
+            transfer()
         elif command == '5':
             break
         else:
