@@ -64,9 +64,36 @@ class BankAccountManagement:
         except:
             return {'status': 'error', 'msg': 'some error happend'}
     
-    def deposit(self):
-        pass 
+    
+    
+    
+    
+    
+    def deposit(self, id, amount):
+        if id not in self.accounts:
+            return {'status': 'error', 'msg': 'id does not exist'}
+        try: 
+            self.accounts[id]['balance'] += amount
+        except:
+            return {'status': 'error', 'msg': 'something wrong happend'}
+        
+        return {'status': 'ok'}
+
        
-    def withdraw(self):
-        pass    
+       
+       
+       
+    def withdraw(self, id, amount):
+        if id not in self.accounts:
+            return {'status': 'error', 'msg': 'id does not exist'}
+        
+        if self.accounts[id]['balance'] < amount:
+            return {'status': 'error', 'msg': 'insufficient'}
+            
+        try: 
+            self.accounts[id]['balance'] -= amount
+        except:
+            return {'status': 'error', 'msg': 'something wrong happend'}
+        
+        return {'status': 'ok'}    
             

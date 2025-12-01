@@ -41,7 +41,14 @@ def transfer():
         print('transfer is done')
 
 def deposit():
-    pass
+    id = input('account id: ')
+    amount = input('amont: ')
+    
+    result = bam.deposit(id, amount)
+    # if result['status'] == 'error':
+    #     print(result['msg'])
+    # else:
+    #     print('transfer is done')
 
 def withdraw():
     pass
