@@ -75,7 +75,7 @@ class BankAccountManagement:
         try: 
             self.accounts[id]['balance'] += amount
         except:
-            return {'status': 'error', 'msg': 'something wrong happend'}
+            return {'status': 'error', 'msg': 'something wrong happen'}
         
         return {'status': 'ok'}
 
@@ -93,7 +93,7 @@ class BankAccountManagement:
         try: 
             self.accounts[id]['balance'] -= amount
         except:
-            return {'status': 'error', 'msg': 'something wrong happend'}
+            return {'status': 'error', 'msg': 'something wrong happen'}
         
         return {'status': 'ok'}    
             

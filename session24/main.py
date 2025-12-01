@@ -42,16 +42,23 @@ def transfer():
 
 def deposit():
     id = input('account id: ')
-    amount = input('amont: ')
+    amount = input('amount: ')
     
     result = bam.deposit(id, amount)
-    # if result['status'] == 'error':
-    #     print(result['msg'])
-    # else:
-    #     print('transfer is done')
+    if result['status'] == 'error':
+        print(result['msg'])
+    else:
+        print('transfer is done')
 
 def withdraw():
-    pass
+    id = input('account id: ')
+    amount = input('amount: ')
+    
+    result = bam.withdraw(id, amount)
+    if result['status'] == 'error':
+        print(result['msg'])
+    else:
+        print('transfer is done')
 
 def main():
     while True:
