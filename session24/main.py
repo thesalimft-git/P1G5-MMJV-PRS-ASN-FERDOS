@@ -82,9 +82,5 @@ def main():
         else:
             print('wring choice, try again')
             
-
-
-                
-        
-        
+       
 main()

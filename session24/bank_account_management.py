@@ -13,7 +13,7 @@ class BankAccountManagement:
         for id in self.accounts:
             print(f"{id}- {self.accounts[id]['name']} ({self.accounts[id]['balance']})")
             for history in self.accounts[id]['history']:
-                print(f'\t- {history.get('type')} {history.get('amount')} at {history.get('time')}')
+                print(f"\t- {history.get('type')} {history.get('amount')} at {history.get('time')}")
    
     def add_user(self, name:str, first_amount:float):
         if not name:
@@ -40,7 +40,7 @@ class BankAccountManagement:
     def transfer(self, from_who:str, to_whom:str, amount:str): 
         # convert and check data type 
         try:
-            from_who = int(from_who)
+            from_who = (from_who)
             to_whom = int(to_whom)
             amount = float(amount)
         except:
