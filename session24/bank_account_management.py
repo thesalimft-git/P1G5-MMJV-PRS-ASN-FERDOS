@@ -4,10 +4,16 @@ class BankAccountManagement:
     def __init__(self, accounts:dict):
         self.accounts = accounts
         
+    def show_id(self):
+        for id in self.accounts:
+            print(f"{id}- {self.accounts[id]['name']}")
+            
+            
     def show_info(self):
-        print(self.accounts)
         for id in self.accounts:
             print(f"{id}- {self.accounts[id]['name']} ({self.accounts[id]['balance']})")
+            for history in self.accounts[id]['history']:
+                print(f'\t- {history.get('type')} {history.get('amount')} at {history.get('time')}')
    
     def add_user(self, name:str, first_amount:float):
         if not name:
@@ -31,7 +37,7 @@ class BankAccountManagement:
         })
         return {'status': 'ok'}
     
-    def tranfer(self, from_who:str, to_whom:str, amount:str): 
+    def transfer(self, from_who:str, to_whom:str, amount:str): 
         # convert and check data type 
         try:
             from_who = int(from_who)
@@ -44,7 +50,7 @@ class BankAccountManagement:
         if from_who not in self.accounts:
             return {'status': 'error', 'msg': 'withdraw user does not exist'}
         if to_whom not in self.accounts:
-            return {'status': 'error', 'msg': 'deposite user does not exist'}
+            return {'status': 'error', 'msg': 'deposit user does not exist'}
         if self.accounts[from_who]['balance'] < amount:
             return {'status': 'error', 'msg': 'withdraw user does not have enough balance'}
            
@@ -53,16 +59,16 @@ class BankAccountManagement:
             self.accounts[to_whom]['balance'] += amount
             
             self.accounts[from_who]['history'].append(
-                {'time': dt.now().strftime('%Y-%M-%D %H:%M'), type: 'withdraw', 'amount': amount}
+                {'time': dt.now().strftime('%Y-%m-%d %H:%M'), type: 'withdraw', 'amount': amount}
             )
 
             self.accounts[to_whom]['history'].append(
-                {'time': dt.now().strftime('%Y-%M-%D %H:%M'), type: 'deposite', 'amount': amount}
+                {'time': dt.now().strftime('%Y-%m-%d %H:%M'), type: 'deposit', 'amount': amount}
             )
             return {'status': 'ok'}
             
         except:
-            return {'status': 'error', 'msg': 'some error happend'}
+            return {'status': 'error', 'msg': 'some error happen'}
     
     
     
