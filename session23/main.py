@@ -16,7 +16,7 @@ def show_menu():
     print('3- Transfer')
     print('4- Deposite')
     print('5- Withdraw')
-    print('6- Exit')
+    print('6- Exit\n')
   
 def add_user():
     name = input('insert name: ')

@@ -5,7 +5,6 @@ class BankAccountManagement:
         self.accounts = accounts
         
     def show_info(self):
-        print(self.accounts)
         for id in self.accounts:
             print(f"{id}- {self.accounts[id]['name']} ({self.accounts[id]['balance']})")
    
@@ -38,7 +37,7 @@ class BankAccountManagement:
             to_whom = int(to_whom)
             amount = float(amount)
         except:
-            return {'status': 'error', 'msg': 'inputs type are not valid'}          
+            return {'status': 'error', 'msg': 'input types are not valid'}          
             
         # check if id exist:
         if from_who not in self.accounts:
@@ -53,11 +52,11 @@ class BankAccountManagement:
             self.accounts[to_whom]['balance'] += amount
             
             self.accounts[from_who]['history'].append(
-                {'time': dt.now().strftime('%Y-%m-%d %H:%M'), type: 'withdraw', 'amount': amount}
+                {'time': dt.now().strftime('%Y-%m-%d %H:%M'), 'type': 'withdraw', 'amount': amount}
             )
 
             self.accounts[to_whom]['history'].append(
-                {'time': dt.now().strftime('%Y-%m-%d %H:%M'), type: 'deposite', 'amount': amount}
+                {'time': dt.now().strftime('%Y-%m-%d %H:%M'), 'type': 'deposite', 'amount': amount}
             )
             return {'status': 'ok'}
             
