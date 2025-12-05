@@ -18,7 +18,6 @@ def show_menu():
     print('5- Withdraw')
     print('6- Exit')
   
-
 def add_user():
     name = input('insert name: ')
     first_amount = input('insert amount: ')
@@ -32,9 +31,9 @@ def add_user():
 def transfer():
     from_who = input('from who: ')
     to_whom = input('to whom: ')
-    amount = input('amont: ')
+    amount = input('amount: ')
     
-    result = bam.tranfer(from_who, to_whom, amount)
+    result = bam.transfer(from_who, to_whom, amount)
     if result['status'] == 'error':
         print(result['msg'])
     else:
@@ -64,11 +63,7 @@ def main():
         elif command == '6':
             break
         else:
-            print('wring choice, try again')
+            print('wrong choice, try again')
             
-
-
-                
-        
-        
+    
 main()
